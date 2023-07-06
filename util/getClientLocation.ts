@@ -8,12 +8,16 @@ const options = {
 	headers: {
 		'X-Api-Key': key,
 	},
-	contentType: 'application/json'
+	contentType: 'application/json',
 };
 
 export default async function getClientLocation() {
     const IP = await getClientIp();
     const req = await fetch(URL + IP.ip, options);
     const clientLocation = await req.json();
+	if (!req.ok) {
+		const err = new Error('Failed to fetch location');
+		console.log(err);
+	  }
     return clientLocation;
 }

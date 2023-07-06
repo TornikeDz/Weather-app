@@ -1,4 +1,9 @@
-const weatherUrl = {
+interface weatherUrlObject {
+    day: Record<string, string>,
+    night: Record<string, string>
+}
+
+const weatherUrl: weatherUrlObject = {
     day: {
         "Cloudy": "/weatherIcons/cloudy.webp",
         "Overcast": "/weatherIcons/cloudy.webp",
