@@ -1,5 +1,6 @@
 const options = {
     method: 'GET',
+    cache: 'no-cache',
     headers: {
         "Content-Type": "application/json",
         'X-RapidAPI-Key': 'fd7c996a32msh830a79b332d84b0p17c572jsnbfa170500b8e',
