@@ -1,7 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import weatherUrl from '@/public/weatherUrl';
-import AdditionalData from './AdditionalData';
+import AdditionalData from '@/components/AdditionalData';
+
 interface Weather {
     localtime: string,
     city: string,
@@ -31,7 +32,7 @@ const CurrentWeather = ({localtime, city, temp_c, text, dayTime, humidity, wind_
                     height={88} 
                     alt={`${text} icon`}/>
                     <span className="text-7xl text-blue-dark flex">
-                        {temp_c} <span className="align-top">°</span>
+                        {Math.round(temp_c)} <span className="align-top ml-[-6px]">°</span>
                     </span>
                 </div>
                 <div className="text-blue-light self-center">{text}</div>
